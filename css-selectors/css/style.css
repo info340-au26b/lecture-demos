@@ -6,9 +6,39 @@ header {
   margin-bottom: 1em;
 }
 
-h2 {
+h1, h2, h3 {
+  color: rebeccapurple
+}
+
+header p {
+ color: goldenrod; 
+}
+
+.about-section img {
+
+}
+
+.link-section ul li {
+
+}
+
+.alert .success {
+
+}
+
+.alert--.success {
+
+}
+
+
+/* h2 {
   color: rebeccapurple;
 }
+
+h3 {
+  color: rebeccapurple
+} */
+
 
 p {
   font-size: 18px;
@@ -20,8 +50,16 @@ img {
   background-color: white;
 }
 
+img:hover {
+  max-height: 250px;
+}
+
 /* elements with class="about-section" */
 .about-section {
   background-color: #eee;
   padding: .25em .5em;
+}
+
+.link-section a:hover {
+  color: green;
 }
