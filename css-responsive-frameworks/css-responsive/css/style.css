@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: magenta;
+}
+
 /* general styling */
 h1, h2, h3 {
   font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -45,9 +49,9 @@ nav a {
 
 /* topics cards */
 .card-box {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .topics-section .card {
@@ -63,3 +67,43 @@ nav a {
 footer {
   font-size: smaller;
 }
+
+@media (min-width: 768px) {
+
+  body {
+    background-color: lightgrey;
+  }
+
+  .card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .topics-section .card {
+    border: 1px solid black;
+    flex-basis: 50%;
+  }
+
+  .about-section img {
+    display: none;
+  }
+
+}
+
+@media (min-width: 992px) {
+  body {
+    background-color: lightcyan;
+  }
+
+  .topics-section .card {
+    flex-basis: 33%;
+  }
+
+  .about-section img {
+    display: inline;
+  }
+
+}
+
+/* breakpoints 576, 768, 992, 1200 */
