@@ -4,6 +4,17 @@ h1, h2, h3 {
   font-family: 'Helvetica';
 }
 
+p {
+  /* padding-top: 2em;
+  padding-left: 1em;
+  padding-bottom: 2em;
+  padding-right: 1em; */
+
+  padding: 1em;
+  padding: 2em 1em;
+
+}
+
 h2 {
   color: rebeccapurple;
 }
@@ -63,7 +74,8 @@ header p {
 
 .topics-section .card {
   border: 1px solid black;
-  flex-grow: 1;
+  flex: 1 0 25%;
+  /* flex-grow: 1; */
 }
 
 .topics-section img {
@@ -74,3 +86,5 @@ header p {
 footer {
   font-size: smaller;
 }
+
+
