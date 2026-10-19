@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+/* general styling */
+h1, h2, h3 {
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+}
+
+h2 {
+  color: rebeccapurple;
+}
+
+/* nav bar */
+nav {
+  color: white;
+  background-color: #4b2e83;
+  padding: .25em 0;
+}
+
+nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  display: inline-block;
+  width: 150px;
+}
+
+nav a {
+  color: white;
+}
+
+/* about section */
+.about-section {
+  background-color: #f8f8f8;
+}
+
+.about-section img {
+  max-width: 150px;
+}
+
+
+/* topics cards */
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.topics-section .card {
+  border: 1px solid black;
+  flex-grow: 1;
+}
+
+.topics-section img {
+  max-width: 150px;
+}
+
+/* other */
+footer {
+  font-size: smaller;
+}

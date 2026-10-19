@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="author" content="INFO 340">
+  <title>Demo: INFO 340 Home Page (Bootstrap)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="https://canvas.uw.edu/courses/1919339">Canvas</a></li>
+      <li><a href="https://info340.github.io/">Textbook</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/">MDN (reference)</a></li>
+      <li><a href="https://ischool.uw.edu">iSchool</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>INFO 340</h1>
+    <p>Client Side Web Development</p>
+    <p>
+      <a href="http://getbootstrap.com/">Built with Bootstrap</a>
+    </p>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <h2>About The Course</h2>
+      <p>This course will teach you the skills and techniques necessary for creating sophisticated and accessible interactive web applications. Upon completing this course, students will be able to build robust web applications, and will have the foundation for independently learning new skills in the ever-changing world of web development.</p>
+    
+      <p>
+        <img src="img/busy-spider-icon.png" alt="the very busy spider">
+      </p>
+    </section>
+    
+    <section class="topics-section">
+      <h2>Technologies Learned</h2>
+      <p>
+        <button>Hide All</button>
+      </p>
+      <div class="card-box">
+        <div>
+          <img src="img/html-icon.png" alt="html 5 logo">
+          <h3>Hypertext Markup Language</h3>
+        </div>
+
+        <div>
+          <img src="img/css-icon.png" alt="css 3 logo">
+          <h3>Cascading Style Sheets </h3>
+        </div>
+
+        <div>
+          <img src="img/js-icon.png" alt="javascript logo">
+          <h3>JavaScript</h3>
+        </div>
+
+        <div>
+          <img src="img/react-icon.png" alt="react logo">
+          <h3>React</h3>
+        </div>
+
+        <div>
+          <img src="img/firebase-icon.png" alt="firebase logo">
+          <h3>Firebase</h3>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Contact Form</h2>
+      <form>
+        <div>
+          <label for="name-input">Name:</label> 
+          <input id="name-input" type="text" name="username">
+        </div>
+        <div>
+          <label for="email-input">Email:</label>
+          <input id="email-input" type="email" name="useremail">
+        </div>
+        <div>
+          <label for="comment-text">Question:</label> 
+          <textarea id="comment-text" name="comment"></textarea>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>      
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; INFO 340</p>
+  </footer>
+</body>
+</html>
