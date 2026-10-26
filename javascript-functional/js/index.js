@@ -1,8 +1,47 @@
 'use strict';
 
 /** Functional Programming Demo **/
+function sayHello(name) { 
+   console.log("Hello, "+name);
+}
+
+function sayGoodbye(name) {
+  console.log("Goodbye," + name);
+}
+
+const sayHowdy = function(name) {
+  console.log("Howdy, "+name);
+}
+
+const message = "hello";
+
+function callWithWorld(aFunction) {
+   aFunction("world");
+}
+
+// callWithWorld(sayHello);
+// callWithWorld(sayGoodbye);
+// callWithWorld(function(name) {
+//   console.log("Howdy, "+name);
+// });
 
 
+function doTogether(func1, secondCallback){
+    // console.log(firstCallback);
+    func1();  //execute the first function
+    secondCallback();  //execute the second function
+    console.log('at the "same time"!');
+}
+
+function patHead() {
+    console.log('pat your head');
+}
+
+function rubBelly() {
+    console.log('rub your belly');
+}
+
+// doTogether(patHead, rubBelly());
 
 
 
@@ -40,3 +79,45 @@ function renderSongList(aSongObjArray) {
 
 //call function to render the data!
 renderSongList(songObjArray); 
+
+/** Interactivity **/
+let isSmallPuppy = true; //state
+
+
+
+const puppyButton = document.querySelector('#puppySection button');
+
+puppyButton.addEventListener('click', function(event) {
+  console.log("You clicked me!");
+  const puppyImg = document.querySelector('#puppySection img');
+
+  //change the state
+  isSmallPuppy = !isSmallPuppy;
+
+  //showing content based on the state
+  if(isSmallPuppy) {
+    puppyImg.src = "img/puppy.jpg";
+    puppyImg.alt = "a baby puppy";
+  } else { //isBig
+    puppyImg.src = "img/husky.jpg";
+    puppyImg.alt = "a grown puppy";
+  }
+}); 
+
+/** From **/
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log("you submitted me");
+
+  //1. modify the state data
+  const artistInput = document.querySelector('#artistInput');
+  const typedArtist = artistInput.value;
+
+  songObjArray.push({artist: typedArtist, title: "hard coded", youtubeUrl:"undefined"});
+
+  //2. re-render
+  renderSongList(songObjArray); 
+
+
+});
