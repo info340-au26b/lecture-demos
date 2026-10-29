@@ -44,6 +44,18 @@ function rubBelly() {
 // doTogether(patHead, rubBelly());
 
 
+// const array = ['a','b','c'];
+
+// array.forEach(function(item) {
+//    console.log(item);
+// });
+
+
+// const newArray = oldArray.map(function(item) {
+//   const transformed = item+"transformed";
+//   return transformed;
+// })
+
 
 
 /** Data **/
@@ -54,6 +66,8 @@ const songObjArray = [
   { artist: "Calvin Harris", title: "Outside", youtubeUrl: "https://www.youtube.com/watch?v=J9NQFACZYEU" },
   { artist: "Creed", title: "Last Breath", youtubeUrl: "https://www.youtube.com/watch?v=qnkuBUAwfe0" },
 ];
+
+
 
 /** Render Functions **/
 
@@ -104,7 +118,7 @@ puppyButton.addEventListener('click', function(event) {
   }
 }); 
 
-/** From **/
+/** Form **/
 const form = document.querySelector('form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -118,6 +132,20 @@ form.addEventListener('submit', function(event) {
 
   //2. re-render
   renderSongList(songObjArray); 
-
-
 });
+
+
+//[{},{},{}] => [<>, <>, <>]
+// const songTitleArray = songObjArray.map(function(songObj) {
+//   const transformed = createSongListItem(songObj);
+//   return transformed;
+// })
+const songTitleArray = songObjArray.map(createSongListItem);
+
+console.log(songTitleArray);
+
+const allTitlesStr = songObjArray.reduce(function(acc, curr) {
+  const accum = acc + curr.title;
+  return accum;
+}, "")
+console.log(allTitlesStr)
