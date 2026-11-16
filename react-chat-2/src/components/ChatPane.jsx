@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ComposeForm } from './ComposeForm.jsx';
 
@@ -9,8 +9,25 @@ export function ChatPane(props) {
   console.log("rendering chatpane")
   const { currentChannel } = props;
 
+  const [countValue, setCountValue] = useState(6);
+  const [messageObjArray, setMessageObjArray] = useState(INITIAL_CHAT_LOG);
+
+
+
+
   //data: an array of message objects [{}, {}]
-  const messageObjArray = INITIAL_CHAT_LOG
+  //const messageObjArray = INITIAL_CHAT_LOG
+
+  const handleClick = (event) => {
+    console.log("you clicked me!");
+
+    setCountValue(countValue + 1); //1. Update the board
+                                   //2. rerender the component!
+    addMessage(USERS[1], "I'm from a button", "general");
+
+
+  }
+
 
   // DATA MANAGEMENT: how do we change
   const addMessage = (userObj, messageText, channel) => {
@@ -22,8 +39,13 @@ export function ChatPane(props) {
       "timestamp": Date.now(),
       "channel": channel
     }
-    console.log(newMessage);
-    messageObjArray.push(newMessage)
+    // console.log(newMessage);
+    // messageObjArray.push(newMessage)
+    // console.log(messageObjArray);
+    const newArray = [...messageObjArray, newMessage];
+
+    setMessageObjArray(newArray)
+
   }
 
   /* RENDERING: what do we look like */
@@ -49,7 +71,12 @@ export function ChatPane(props) {
       <div className="scrollable-pane pt-2 my-2">
         {/* button demo */}
         <div className="mb-2">
-          <button className="btn btn-success">Add a message!</button>
+          <button 
+            className="btn btn-success"
+            onClick={handleClick}
+          >
+            Add a message! {countValue}
+          </button>
         </div>
         <hr/>
 
@@ -62,7 +89,11 @@ export function ChatPane(props) {
         {messageItemArray}
       </div>
 
-      <ComposeForm currentChannel={currentChannel} />
+      <ComposeForm 
+        currentUser={USERS[1]} 
+        currentChannel={currentChannel}
+        howToAddMessageFunc={addMessage}
+      />
       </>
   )
 }
@@ -82,7 +113,7 @@ function MessageItem(props) {
       <p className="user-name">{userName}</p>
       <p>{text}</p>
       <button className="btn like-button">
-          <span className="material-icons" style={{ color: buttonColor }}>favorite_border</span>
+          {/* <span className="material-icons" style={{ color: buttonColor }}>favorite_border</span> */}
       </button>
     </div>
    </div> 
